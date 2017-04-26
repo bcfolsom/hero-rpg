@@ -14,11 +14,11 @@ class Character:
         self.health = health
         self.power = power
 
-class Hero(Character):
-
-    def alive(hero):
-        if hero.health > 0:
+    def alive(Character):
+        if Character.health > 0:
             return True
+
+class Hero(Character):
 
     def attack(self, goblin):
             # Hero attacks goblin
@@ -38,10 +38,6 @@ class Hero(Character):
         print("You have {} health and {} power.".format(self.health, self.power))
 
 class Goblin(Character):
-
-    def alive(goblin):
-        if goblin.health > 0:
-            return True
 
     def attack(self, hero):
             # Goblin attacks hero
