@@ -9,6 +9,24 @@ In this simple RPG game, the hero fights the goblin. He has the options to:
 
 """
 
+class Hero:
+    def __init__ (self, health, power):
+        self.health = health
+        self.power = power
+
+class Goblin:
+    def __init__ (self, health, power):
+        self.health = health
+        self.power = power
+
+# class Character:
+#     def __init__ (self, name, health, power):
+#         self.warrior_name = name
+#         self.warrior_health = health
+#         self.warrior_power = power
+#
+# hero = Character(hero, )
+
 def main():
     hero_health = 10
     hero_power = 5
