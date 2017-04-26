@@ -28,9 +28,12 @@ class Hero:
             #     pass
             # elif inpt == "3":
             #     print("Goodbye.")
-            #     # break
+            #     break
             # else:
             #     print("Invalid inpt {}".format(inpt))
+
+    def print_status(self):
+        print("You have {} health and {} power.".format(self.health, self.power))
 
 class Goblin:
     def __init__ (self, health, power):
@@ -48,6 +51,10 @@ class Goblin:
             if hero.health <= 0:
                 print("You are dead.")
 
+    def print_status(self):
+        print("You have {} health and {} power.".format(self.health, self.power))
+
+
 hero = Hero(10, 5)
 goblin = Goblin(6,2)
 
@@ -58,8 +65,10 @@ def main():
 #     goblin_power = 2
 
     while goblin.alive() and hero.alive():
-        print("You have {} health and {} power.".format(hero.health, hero.power))
-        print("The goblin has {} health and {} power.".format(goblin.health, goblin.power))
+        # print("You have {} health and {} power.".format(hero.health, hero.power))
+        # print("The goblin has {} health and {} power.".format(goblin.health, goblin.power))
+        hero.print_status()
+        goblin.print_status()
         print()
         print("What do you want to do?")
         print("1. fight goblin")
