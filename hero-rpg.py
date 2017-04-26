@@ -21,13 +21,13 @@ class Hero:
             print("You do {} damage to the goblin.".format(self.power))
             if goblin.health <= 0:
                 print("The goblin is dead.")
-            elif inpt == "2":
-                pass
-            elif inpt == "3":
-                print("Goodbye.")
-                # break
-            else:
-                print("Invalid inpt {}".format(inpt))
+            # elif inpt == "2":
+            #     pass
+            # elif inpt == "3":
+            #     print("Goodbye.")
+            #     # break
+            # else:
+            #     print("Invalid inpt {}".format(inpt))
 
 class Goblin:
     def __init__ (self, health, power):
@@ -36,9 +36,9 @@ class Goblin:
 
     def attack(self, hero):
             # Goblin attacks hero
-            hero_health -= goblin_power
+            hero.health -= goblin.power
             print("The goblin does {} damage to you.".format(goblin.power))
-            if hero_health <= 0:
+            if hero.health <= 0:
                 print("You are dead.")
 
 hero = Hero(10, 5)
