@@ -10,22 +10,30 @@ In this simple RPG game, the hero fights the goblin. He has the options to:
 """
 
 class Character:
-    def __init__ (self, health, power):
+    def __init__ (self, name, health, power):
+        self.name = name
         self.health = health
         self.power = power
 
-    def alive(Character):
-        if Character.health > 0:
+    def alive(self):
+        if self.health > 0:
             return True
+
+    def attack(self, enemy):
+        enemy.health -= self.power
+
+    def print_status(self):
+        print("{} have {} health and {} power.".format(self.name, self.health, self.power))
 
 class Hero(Character):
 
     def attack(self, goblin):
-            # Hero attacks goblin
-            goblin.health -= self.power
-            print("You do {} damage to the goblin.".format(self.power))
-            if goblin.health <= 0:
-                print("The goblin is dead.")
+        # Hero attacks goblin
+        super().attack(goblin)
+        # goblin.health -= self.power
+        print("You do {} damage to the goblin.".format(self.power))
+        if goblin.health <= 0:
+            print("The goblin is dead.")
             # elif inpt == "2":
             #     pass
             # elif inpt == "3":
@@ -34,24 +42,25 @@ class Hero(Character):
             # else:
             #     print("Invalid inpt {}".format(inpt))
 
-    def print_status(self):
-        print("You have {} health and {} power.".format(self.health, self.power))
+    # def print_status(self):
+    #     print("You have {} health and {} power.".format(self.health, self.power))
 
 class Goblin(Character):
 
     def attack(self, hero):
             # Goblin attacks hero
-            hero.health -= goblin.power
+            super().attack(hero)
+            # hero.health -= goblin.power
             print("The goblin does {} damage to you.".format(goblin.power))
             if hero.health <= 0:
                 print("You are dead.")
 
-    def print_status(self):
-        print("You have {} health and {} power.".format(self.health, self.power))
+    # def print_status(self):
+    #     print("You have {} health and {} power.".format(self.health, self.power))
 
 
-hero = Hero(10, 5)
-goblin = Goblin(6,2)
+hero = Hero('You', 10, 5)
+goblin = Goblin('Goblin', 6, 2)
 
 def main():
 #     hero_health = 10
